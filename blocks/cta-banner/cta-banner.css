@@ -1,0 +1,157 @@
+/* CTA Banner - Rounded card with image left, dark content right, white text, pill button */
+
+/* Background: light gray section with diagonal accent; content panel: semi-transparent gray */
+
+.section:has(.cta-banner) {
+  padding: 48px 0;
+}
+
+/* When CTA banner is inside the product filter section, constrain to column */
+.section:has(.product-filter) .cta-banner {
+  margin: 24px 0;
+  width: 100%;
+  margin-left: 0;
+}
+
+.cta-banner {
+  padding: 0;
+  position: relative;
+  background: #f0f0f0;
+  overflow: hidden;
+
+  /* Full-width: break out of any container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 506px;
+  box-sizing: border-box;
+}
+
+/* Diagonal accent on the background */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, transparent 35%, rgb(210 210 210 / 50%) 35%, rgb(210 210 210 / 50%) 50%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-banner > div {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: var(--grid-container-width);
+  margin: 0 auto;
+  height: 100%;
+  padding: 48px 0;
+  box-sizing: border-box;
+}
+
+.cta-banner > div > div {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Image column */
+.cta-banner .cta-banner-image {
+  line-height: 0;
+}
+
+.cta-banner .cta-banner-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content column — semi-transparent dark gray */
+.cta-banner .cta-banner-content {
+  background: rgb(100 100 100 / 90%);
+  color: #fff;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta-banner .cta-banner-content h2 {
+  font-family: "Roboto Flex", "Roboto Condensed", sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: none;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.cta-banner .cta-banner-content p {
+  font-family: "Roboto Flex", "Noto Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0 0 8px;
+}
+
+/* Pill button — white filled with dark text */
+.cta-banner .cta-banner-content a.button,
+.cta-banner .cta-banner-content a.btn,
+.cta-banner .cta-banner-content a.btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  border-radius: 28px;
+  padding: 12px 28px;
+  font-family: "Roboto Flex", "Noto Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: none;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 16px;
+  width: fit-content;
+}
+
+.cta-banner .cta-banner-content a.button:hover,
+.cta-banner .cta-banner-content a.btn:hover,
+.cta-banner .cta-banner-content a.btn-primary:hover {
+  background: #e0e0e0;
+  color: #000;
+}
+
+/* Multiple buttons side by side */
+.cta-banner .cta-banner-content .btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+@media (width >= 900px) {
+  .cta-banner > div {
+    flex-direction: row;
+    padding: 48px 0;
+  }
+
+  .cta-banner .cta-banner-image {
+    flex: 1 1 50%;
+    min-width: 0;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .cta-banner .cta-banner-content {
+    flex: 1 1 50%;
+    min-width: 0;
+    padding: 48px 56px;
+    border-radius: 0 16px 16px 0;
+  }
+
+  .cta-banner .cta-banner-content h2 {
+    font-size: 32px;
+  }
+}

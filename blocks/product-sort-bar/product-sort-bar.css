@@ -1,0 +1,53 @@
+/* Product Sort Bar — dark bar with filter icon, label, and dropdown chevron */
+
+.product-sort-bar {
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.sort-bar-inner,
+.product-sort-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sort-bar-inner:hover,
+.product-sort-bar > div:hover {
+  background: #333;
+}
+
+.sort-bar-icon {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1;
+}
+
+.sort-bar-label {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  flex: 1;
+}
+
+.sort-bar-chevron {
+  font-size: 18px;
+  color: #fff;
+  line-height: 1;
+}
+
+/* Fallback: if JS didn't decorate, style the raw content */
+.product-sort-bar > div > div p {
+  margin: 0;
+  color: #fff;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}

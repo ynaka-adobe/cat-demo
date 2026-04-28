@@ -1,20 +1,120 @@
+/* Cat.com-style Footer */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background: #fff;
+  color: #333;
+  font-family: var(--font-family);
+  font-size: 14px;
+  border-top: 1px solid #e0e0e0;
+
+  a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.15s;
+  }
+
+  a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .footer-content {
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+  }
+
+  .section {
+    padding: 0;
+
+    .default-content {
+      max-width: initial;
+      margin: initial;
+    }
+  }
+
+  /* Link columns grid */
+  .section-links .default-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-column p {
+    margin: 0 0 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .footer-column li {
+    margin: 0;
+    padding: 4px 0;
+  }
+
+  .footer-column li a {
+    color: #555;
+    font-size: 14px;
+  }
+
+  .footer-column li a:hover {
+    color: #000;
+  }
+
+  /* Legal / bottom row */
+  .section-copyright {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 24px;
+    margin-top: 40px;
+  }
+
+  .section-copyright ul {
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .section-copyright li {
+    margin: 0;
+  }
+
+  .section-copyright li a {
+    font-size: 13px;
+    color: #666;
+  }
+
+  .section-copyright li a:hover {
+    color: #000;
+  }
+
+  .section-copyright p {
+    margin: 0;
+    color: #999;
+    font-size: 12px;
+  }
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
-
-footer .footer p {
-  margin: 0;
+@media (width >= 600px) {
+  footer {
+    .section-links .default-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer {
+    .section-links .default-content {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
   }
 }

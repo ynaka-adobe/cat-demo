@@ -1,0 +1,107 @@
+/* Product Filter — sidebar with checkbox filter groups */
+
+.product-filter {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 8%);
+}
+
+.product-filter .filter-group {
+  display: block;
+  margin-bottom: 24px;
+  padding-bottom: 0;
+}
+
+.product-filter .filter-group > div:first-child {
+  margin-bottom: 12px;
+}
+
+.product-filter .filter-group h4 {
+  font-family: "Roboto Flex", "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  text-transform: none;
+}
+
+.product-filter .filter-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-filter .filter-options li {
+  margin: 0;
+  padding: 6px 0;
+}
+
+.product-filter .filter-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.product-filter .filter-options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  accent-color: var(--color-cat-yellow);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Section layout: filter sidebar + sort bar + product listing */
+.section:has(.product-filter) {
+  padding: 32px 0;
+}
+
+.section:has(.product-filter) > .block-content {
+  display: contents;
+}
+
+@media (width >= 900px) {
+  .section:has(.product-filter) {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 0 32px;
+    align-items: start;
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .section:has(.product-filter) .block-content {
+    display: contents;
+  }
+
+  /* Filter stays in column 1, spans all rows */
+  .section:has(.product-filter) .product-filter {
+    grid-column: 1;
+    grid-row: 1 / span 10;
+    position: sticky;
+    top: calc(var(--header-height) + 16px);
+  }
+
+  /* Sort bar and product listing go in column 2 */
+  .section:has(.product-filter) .product-sort-bar {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  .section:has(.product-filter) .product-listing {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  .section:has(.product-filter) .cta-banner {
+    grid-column: 2;
+    min-width: 0;
+  }
+}

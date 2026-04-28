@@ -1,0 +1,97 @@
+/* Columns Links - Cat.com: 3-column service links with images, Roboto Condensed headings, blue links */
+
+.section:has(.columns-links) {
+  padding: 56px 0;
+}
+
+.section:has(.columns-links) > .default-content {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.columns-links {
+  padding: 0;
+}
+
+.columns-links > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-links > div > div {
+  flex: 1;
+}
+
+.columns-links > div > div > picture {
+  display: block;
+  margin-bottom: 16px;
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.columns-links > div > div > picture img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.columns-links h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: capitalize;
+  color: #000;
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #ffcd11;
+}
+
+.columns-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns-links li {
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.columns-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: #0067b8;
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.columns-links li a::after {
+  content: "\203A";
+  font-size: 1.4em;
+  color: #333;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.columns-links li a:hover {
+  color: #004a82;
+}
+
+@media (width >= 900px) {
+  .columns-links > div {
+    flex-direction: row;
+    gap: 32px;
+  }
+}

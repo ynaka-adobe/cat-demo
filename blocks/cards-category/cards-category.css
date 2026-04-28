@@ -1,0 +1,212 @@
+/* Cards Category - Cat.com: white card tiles with border, product images, arrow CTA */
+.cards-category {
+  padding: 0;
+  margin-top: 30px;
+}
+
+.cards-category > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.cards-category > ul > li {
+  margin: 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.cards-category .cards-category-card-body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  order: -1;
+  margin-bottom: 12px;
+}
+
+.cards-category .cards-category-card-body p {
+  margin: 0;
+}
+
+.cards-category .cards-category-card-body a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.cards-category .cards-category-card-body a:hover {
+  text-decoration: underline;
+}
+
+.cards-category .cards-category-card-image {
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards-category .cards-category-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+/* Arrow indicator */
+.cards-category > ul > li::after {
+  content: "\2192";
+  display: block;
+  align-self: flex-end;
+  margin-top: 12px;
+  font-size: 20px;
+  color: #999;
+}
+
+@media (width >= 600px) {
+  .cards-category > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-category > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 4 items: show as 4 columns */
+  .cards-category > ul:has(> li:nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 5 items: show as 5 columns */
+  .cards-category > ul:has(> li:nth-child(5):last-child) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Explore carousel variant — light bg section with horizontal card scroll */
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category > ul {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 24px;
+  padding: 8px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category > ul > li {
+  flex: 0 0 calc((100% - 96px) / 5);
+  min-width: 200px;
+  height: 227px;
+  scroll-snap-align: start;
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category > ul > li::after {
+  display: none;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category .cards-category-card-image {
+  background: #fff;
+  border-radius: 0;
+  padding: 0;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category .cards-category-card-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category .cards-category-card-body {
+  order: 1;
+  padding: 16px 20px 20px;
+  margin: 0;
+  background: #fff;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] .cards-category .cards-category-card-body a {
+  font-family: "Roboto Flex", "Noto Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.section[style*="background-color: rgb(245, 245, 245)"] h2 {
+  font-family: "Roboto Flex", "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  color: #000;
+  margin-top: 0;
+}
+
+/* Carousel navigation */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.carousel-prev,
+.carousel-next {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  color: #333;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  border-color: #000;
+  background: #f5f5f5;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.2s;
+}
+
+.carousel-dot.active {
+  background: #333;
+}

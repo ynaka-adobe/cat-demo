@@ -1,0 +1,290 @@
+/* Hero Banner — full-bleed image, text overlaid */
+
+/* Strip all section / container / wrapper spacing — hero must be full-bleed */
+.section:has(.hero-banner) {
+  padding: 0;
+  margin: 0;
+}
+
+.section:has(.hero-banner) > .block-content {
+  max-width: unset;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---- Block ---- */
+/* The block has two rows:
+   row 1 (.hero-banner > div:first-child) = image row → positioned absolutely to cover the whole banner
+   row 2 (.hero-banner > div:last-child)  = text row  → sits on top, sets the height */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Image row — pulled out of flow, covers entire banner */
+.hero-banner > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-banner > div:first-child > div {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-banner picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Text row — sets the banner height, gradient scrim, text at bottom */
+.hero-banner > div:last-child {
+  position: relative;
+  z-index: 1;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+.hero-banner > div:last-child > div {
+  padding: 24px 16px;
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hero-banner h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: capitalize;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.hero-banner p {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+/* CTA: Author Kit uses a.btn / a.btn-primary (markdown **label**), not a.button */
+.hero-banner a.button,
+.hero-banner a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: var(--color-cat-yellow, #ffcd11);
+  color: var(--color-cat-black, #000);
+  font-family: var(--button-font-family, "Noto Sans", sans-serif);
+  font-size: var(--button-font-size, 14px);
+  font-weight: var(--button-font-weight, 600);
+  text-transform: var(--button-text-transform, capitalize);
+  text-decoration: none;
+  padding: var(--button-padding, 10px 24px);
+  border: 1px solid var(--color-cat-yellow-dark, #b18d00);
+  border-radius: var(--button-border-radius, 4px);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-banner a.button:hover,
+.hero-banner a.button:focus-visible,
+.hero-banner a.btn:hover,
+.hero-banner a.btn:focus-visible {
+  background-color: var(--color-cat-yellow-hover, #e6b800);
+  color: var(--color-cat-black, #000);
+  border-color: var(--color-cat-yellow-dark, #b18d00);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+  transform: translateY(-1px);
+}
+
+.hero-banner a.button:active,
+.hero-banner a.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+}
+
+/* ---- Desktop ---- */
+@media (width >= 900px) {
+  .hero-banner > div:last-child > div {
+    padding: 32px 48px;
+  }
+
+  .hero-banner h2 {
+    font-size: 48px;
+  }
+}
+
+/* =============================================================================
+   Promo / split layout — add class "promo" (block: hero-banner promo)
+   Diagonal copy panel, black type, yellow rule under headline, yellow wedge.
+   ============================================================================= */
+
+.hero-banner.promo {
+  min-height: 380px;
+  height: 400px;
+  color: var(--color-cat-black, #000);
+}
+
+.hero-banner.promo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: min(42%, 380px);
+  height: min(48%, 280px);
+  background: var(--color-cat-yellow, #ffcd11);
+  clip-path: polygon(38% 0, 100% 0, 100% 100%);
+  pointer-events: none;
+}
+
+.hero-banner.promo > div:first-child img {
+  object-position: 62% center;
+}
+
+.hero-banner.promo > div:last-child {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  height: auto;
+  min-height: 100%;
+  background: none;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.hero-banner.promo > div:last-child > div {
+  pointer-events: auto;
+  margin: 0;
+  max-width: none;
+  width: min(100%, 520px);
+  padding: 28px 40px 28px 24px;
+  background: rgb(255 255 255 / 0.94);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  box-sizing: border-box;
+  align-self: center;
+}
+
+.hero-banner.promo h2 {
+  color: var(--color-cat-black, #000);
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.hero-banner.promo h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  background: var(--color-cat-yellow, #ffcd11);
+}
+
+.hero-banner.promo p {
+  color: var(--color-cat-gray-dark, #333);
+  margin: 0 0 20px;
+}
+
+.hero-banner.promo.no-image > div:last-child {
+  position: relative;
+  inset: auto;
+  min-height: 280px;
+  background: var(--color-cat-gray-light, #f8f8f8);
+}
+
+.hero-banner.promo.no-image > div:last-child > div {
+  clip-path: none;
+  background: transparent;
+}
+
+.hero-banner.promo.no-image::after {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .hero-banner.promo {
+    min-height: 440px;
+    height: 480px;
+  }
+
+  .hero-banner.promo > div:last-child > div {
+    width: min(50%, 560px);
+    padding: 40px 56px 40px 48px;
+  }
+
+  .hero-banner.promo h2 {
+    font-size: clamp(28px, 4vw, 46px);
+  }
+
+  .hero-banner.promo p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+}
+
+@media (width <= 599px) {
+  .hero-banner.promo {
+    height: auto;
+    min-height: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-banner.promo > div:first-child {
+    position: relative;
+    inset: auto;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  .hero-banner.promo::after {
+    width: 120px;
+    height: 100px;
+  }
+
+  .hero-banner.promo > div:last-child {
+    position: relative;
+    inset: auto;
+    flex: 1;
+    min-height: unset;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .hero-banner.promo > div:last-child > div {
+    width: 100%;
+    max-width: none;
+    clip-path: none;
+    padding: 24px 20px 32px;
+  }
+}

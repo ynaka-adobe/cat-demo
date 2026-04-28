@@ -1,0 +1,144 @@
+/* Product Listing — model cards: image/title left (gray), specs/price right (white) */
+
+.product-listing {
+  padding: 0;
+  display: grid;
+  gap: 24px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.product-listing-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 8%);
+}
+
+/* Left column — gray with category, model name, image, compare */
+.product-listing-specs {
+  background: #f5f5f5;
+  padding: 32px 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-listing-specs h6 {
+  display: block;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #777;
+  margin: 0 0 4px;
+}
+
+.product-listing-specs h3 {
+  font-family: "Roboto Flex", "Roboto Condensed", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 24px;
+  text-transform: none;
+}
+
+.product-listing-specs picture {
+  display: block;
+  flex: 1;
+}
+
+.product-listing-specs img {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+/* Compare checkbox at bottom */
+.product-listing-specs p:last-child {
+  margin-top: 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Right column — white with specs and price */
+.product-listing-media {
+  background: #fff;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Spec rows: label + value */
+.product-listing-media p {
+  margin: 0;
+}
+
+.product-listing-media p em {
+  display: block;
+  font-family: "Noto Sans", sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 400;
+  color: #777;
+  margin-top: 16px;
+}
+
+.product-listing-media p strong {
+  display: block;
+  font-family: "Roboto Flex", "Roboto Condensed", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #000;
+  margin-top: 2px;
+}
+
+/* MSRP price — larger */
+.product-listing-media p:last-of-type strong {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+/* Learn More button */
+.product-listing-media p:last-child {
+  text-align: right;
+  margin-top: 24px;
+}
+
+.product-listing-media a.btn,
+.product-listing-media a.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  padding: 12px 28px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.product-listing-media a.btn:hover,
+.product-listing-media a.button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.product-listing-media a.btn::after,
+.product-listing-media a.button::after {
+  content: "\2192";
+  font-size: 18px;
+}
+
+@media (width >= 900px) {
+  .product-listing-item {
+    grid-template-columns: 55% 45%;
+  }
+}

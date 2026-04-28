@@ -1,0 +1,309 @@
+/* Inventory Listing Block */
+.inventory-listing > div {
+  display: none;
+}
+
+/* Header: title left, tabs centered */
+.inventory-listing .inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+}
+
+.inventory-listing .inventory-tabs {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.inventory-listing .inventory-title {
+  font-family: "Roboto Flex", "Roboto Condensed", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: -0.005em;
+  color: #000;
+  margin: 0;
+}
+
+/* (tabs styled above in header) */
+
+.inventory-listing .inventory-tab {
+  padding: 8px 20px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.inventory-listing .inventory-tab:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.inventory-listing .inventory-tab.active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+/* Subtitle bar: model name + configure button */
+.inventory-listing .inventory-subtitle-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.inventory-listing .inventory-subtitle {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
+.inventory-listing .inventory-configure-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-cat-yellow, #ffcd11);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.inventory-listing .inventory-configure-btn:hover {
+  background: var(--color-cat-yellow-hover, #e6b800);
+  text-decoration: none;
+}
+
+/* Content: sidebar + grid */
+.inventory-listing .inventory-content {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Sidebar filters */
+.inventory-listing .inventory-sidebar {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.inventory-listing .inventory-sidebar h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 20px 0 8px;
+  color: #000;
+}
+
+.inventory-listing .inventory-sidebar h4:first-child {
+  margin-top: 0;
+}
+
+.inventory-listing .inventory-sidebar select,
+.inventory-listing .inventory-sidebar input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+}
+
+.inventory-listing .inventory-sidebar p {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.inventory-listing .inventory-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.inventory-listing .inventory-sidebar li {
+  font-size: 13px;
+  padding: 4px 0;
+  color: #333;
+}
+
+/* Info bar */
+.inventory-listing .inventory-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.inventory-listing .sort-arrow {
+  font-size: 16px;
+}
+
+/* Card grid */
+.inventory-listing .inventory-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Individual card */
+.inventory-listing .inventory-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 6%);
+  overflow: hidden;
+}
+
+.inventory-listing .inventory-card-image {
+  padding: 0;
+  line-height: 0;
+}
+
+.inventory-listing .inventory-card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.inventory-listing .inventory-card-body {
+  padding: 16px;
+}
+
+/* Category label */
+.inventory-listing .inventory-card-body h3 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0 0 4px;
+}
+
+/* Model number */
+.inventory-listing .inventory-card-body p:first-of-type {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 2px;
+}
+
+/* Serial number */
+.inventory-listing .inventory-card-body p:nth-of-type(2) {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 8px;
+}
+
+/* "As configured" label */
+.inventory-listing .inventory-card-body p:nth-of-type(3) {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 11px;
+  color: #888;
+  margin: 0 0 2px;
+}
+
+/* Price */
+.inventory-listing .inventory-card-body p:nth-of-type(4) {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 8px;
+}
+
+/* Dealer + distance */
+.inventory-listing .inventory-card-body p:nth-of-type(5) {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 12px;
+}
+
+/* View Details button */
+.inventory-listing .inventory-card-body a.btn,
+.inventory-listing .inventory-card-body a.btn-primary {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.inventory-listing .inventory-card-body a.btn::after,
+.inventory-listing .inventory-card-body a.btn-primary::after {
+  content: " \2192";
+}
+
+.inventory-listing .inventory-card-body a.btn:hover,
+.inventory-listing .inventory-card-body a.btn-primary:hover {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Rental cards — yellow "Rent Now" button */
+.inventory-listing .inventory-card-grid[data-condition="rental"] .inventory-card-body a.btn,
+.inventory-listing .inventory-card-grid[data-condition="rental"] .inventory-card-body a.btn-primary {
+  background: var(--color-cat-yellow, #ffcd11);
+  color: #000;
+  border: 1px solid var(--color-cat-yellow-dark, #b18d00);
+}
+
+.inventory-listing .inventory-card-grid[data-condition="rental"] .inventory-card-body a.btn:hover,
+.inventory-listing .inventory-card-grid[data-condition="rental"] .inventory-card-body a.btn-primary:hover {
+  background: var(--color-cat-yellow-hover, #e6b800);
+  color: #000;
+}
+
+/* Responsive */
+@media (width <= 900px) {
+  .inventory-listing .inventory-content {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-listing .inventory-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inventory-listing .inventory-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (width <= 599px) {
+  .inventory-listing .inventory-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
