@@ -352,11 +352,11 @@ export default async function init(el) {
       global: {
         catUrl: 'https://www.cat.com',
         catLabel: 'Cat.com',
-        address: '21230 N. Black Canyon Hwy, Phoenix, AZ 85027',
+        address: '12345 Main Street, Chicago, IL 12345',
         phones: [
-          { label: 'Service', number: '(623) 760-1100' },
-          { label: 'Parts', number: '(623) 760-1100' },
-          { label: 'Sales', number: '(623) 760-1100' },
+          { label: 'Service', number: '(555) 123-4567' },
+          { label: 'Parts', number: '(555) 123-4567' },
+          { label: 'Sales', number: '(555) 123-4567' },
         ],
       },
       logo: null,
