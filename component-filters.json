@@ -22,11 +22,15 @@
   },
   {
     "id": "cards-category",
-    "components": []
+    "components": [
+      "card"
+    ]
   },
   {
     "id": "cards-product",
-    "components": []
+    "components": [
+      "card"
+    ]
   },
   {
     "id": "cards",
