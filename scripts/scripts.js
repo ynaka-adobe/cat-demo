@@ -114,16 +114,23 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  loadHeader(doc.querySelector('header'));
+  const headerEl = doc.querySelector('header');
+  if (headerEl) {
+    loadHeader(headerEl);
+  } else {
+    // eslint-disable-next-line no-console
+    console.warn('[scripts] No <header> in document — skipping header block (add <header></header> to your template).');
+  }
 
   const main = doc.querySelector('main');
-  await loadSections(main);
+  if (main) await loadSections(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadFooter(doc.querySelector('footer'));
+  const footerEl = doc.querySelector('footer');
+  if (footerEl) loadFooter(footerEl);
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();

@@ -22,11 +22,13 @@ function buildGlobalBar(globalData) {
   const inner = document.createElement('div');
   inner.className = 'header-inner';
 
-  // Cat.com back link
+  // Cat.com back link (matches dealer pattern: "< Cat.com")
+  const rawLabel = (globalData.catLabel || 'Cat.com').trim();
+  const catWord = rawLabel.replace(/^<\s*/, '').trim();
   const backLink = document.createElement('a');
   backLink.className = 'header-back-link';
   backLink.href = globalData.catUrl || 'https://www.cat.com';
-  backLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg><span>${globalData.catLabel || 'Cat.com'}</span>`;
+  backLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg><span>&lt; ${catWord}</span>`;
 
   // Right side: address + phones
   const info = document.createElement('div');
@@ -290,7 +292,7 @@ function buildHeader(el, dealerData) {
   if (dealerData.logo) {
     logoLink.append(dealerData.logo);
   } else {
-    logoLink.innerHTML = '<img src="/images/empire-cat-logo.png" alt="Empire CAT" width="150" height="40">';
+    logoLink.innerHTML = '<img src="/images/dealer-logo.png" alt="DEALER CAT" width="213" height="77">';
   }
 
   // Nav
@@ -350,7 +352,7 @@ export default async function init(el) {
       global: {
         catUrl: 'https://www.cat.com',
         catLabel: 'Cat.com',
-        address: '21230 N. Black Canyon Hwy. Phoenix, AZ 85027',
+        address: '21230 N. Black Canyon Hwy, Phoenix, AZ 85027',
         phones: [
           { label: 'Service', number: '(623) 760-1100' },
           { label: 'Parts', number: '(623) 760-1100' },

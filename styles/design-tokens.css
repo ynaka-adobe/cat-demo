@@ -1,0 +1,123 @@
+/*
+ * Cat.com / Author Kit design tokens — required by blocks copied from ynaka-adobe/cat.
+ * See: https://github.com/ynaka-adobe/cat/blob/main/styles/styles.css
+ */
+
+/* Cat.com fonts — Roboto Condensed (headings), Noto Sans / Roboto Flex (body) */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto+Flex:wght@300;400;700&family=Noto+Sans:wght@400;600;700&display=swap");
+
+html {
+  color-scheme: light;
+}
+
+:root {
+  /* grid */
+  --grid-container-width: 1150px;
+  --grid-column-width: calc(var(--grid-container-width) / 12);
+  --grid-gutter-width: 8.3%;
+
+  /* spacing — Author Kit section-metadata, cards, etc. */
+  --spacing-xxl: 56px;
+  --spacing-xl: 48px;
+  --spacing-l: 32px;
+  --spacing-m: 24px;
+  --spacing-s: 12px;
+  --spacing-xs: 8px;
+
+  /* cat brand colors */
+  --color-cat-yellow: #ffcd11;
+  --color-cat-yellow-dark: #b18d00;
+  --color-cat-yellow-hover: #e6b800;
+  --color-cat-black: #000;
+  --color-cat-white: #fff;
+  --color-cat-gray-light: #f8f8f8;
+  --color-cat-gray-medium: #e0e0e0;
+  --color-cat-gray-dark: #333;
+
+  /* semantic colors */
+  --color-text: var(--color-cat-black);
+  --color-link: var(--color-cat-black);
+  --color-brand: var(--color-cat-yellow);
+  --color-accent: var(--color-cat-yellow);
+  --color-background: var(--color-cat-white);
+  --color-shaded: var(--color-cat-gray-light);
+  --color-cat-blue: #0067b8;
+
+  /* Palette for `light-dark()` in cards / section-metadata (Author Kit blocks) */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-dark: #111827;
+  --color-light: #fafafa;
+
+  /* fonts */
+  --font-family: "Roboto Flex", "Noto Sans", montserrat, "Trebuchet MS", sans-serif;
+  --heading-font-family: "Roboto Flex", "Roboto Condensed", montserrat, "Trebuchet MS", sans-serif;
+  --button-font-family: "Roboto Flex", "Noto Sans", montserrat, "Trebuchet MS", sans-serif;
+
+  /* headings */
+  --heading-font-size-xxl: 58px;
+  --heading-font-size-xl: 30px;
+  --heading-font-size-l: 26px;
+  --heading-font-size-m: 22px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 18px;
+  --heading-font-weight: 700;
+  --heading-line-height: 1.15;
+
+  /* body */
+  --body-font-size-xxxl: 25px;
+  --body-font-size-xxl: 22px;
+  --body-font-size-xl: 20px;
+  --body-font-size-l: 18px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+  --body-line-height: 1.2;
+
+  /* buttons */
+  --button-bg: var(--color-cat-yellow);
+  --button-color: var(--color-cat-black);
+  --button-border: 1px solid var(--color-cat-yellow-dark);
+  --button-border-radius: 4px;
+  --button-padding: 9px 44px;
+  --button-font-size: 14px;
+  --button-font-weight: 600;
+  --button-text-transform: capitalize;
+  --button-transition: all 0.25s linear;
+  --button-bg-hover: var(--color-cat-yellow-hover);
+
+  --header-height: 120px;
+  --breadcrumb-height: 24px;
+
+  /* Boilerplate aliases (legacy styles.css selectors) */
+  --nav-height: var(--header-height);
+  --background-color: var(--color-background);
+  --light-color: var(--color-shaded);
+  --dark-color: var(--color-cat-gray-dark);
+  --text-color: var(--color-text);
+  --body-font-family: var(--font-family);
+  --link-color: var(--color-cat-blue);
+  --link-hover-color: #004578;
+}
+
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xxl: 45px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 22px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xs: 18px;
+    --body-font-size-m: 18px;
+    --body-font-size-s: 16px;
+    --body-font-size-xs: 14px;
+  }
+}
