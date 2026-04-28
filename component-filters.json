@@ -15,12 +15,17 @@
       "hero",
       "cards",
       "cards-category",
+      "cards-product",
       "columns",
       "fragment"
     ]
   },
   {
     "id": "cards-category",
+    "components": []
+  },
+  {
+    "id": "cards-product",
     "components": []
   },
   {

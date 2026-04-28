@@ -143,7 +143,29 @@
   },
   {
     "id": "cards-category",
-    "fields": []
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Name",
+        "description": "Optional label for the content tree",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "cards-product",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "label": "Name",
+        "description": "Optional label for the content tree",
+        "value": ""
+      }
+    ]
   },
   {
     "id": "card",
