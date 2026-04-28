@@ -97,6 +97,11 @@ html {
   --header-height: 120px;
   --breadcrumb-height: 24px;
 
+  /* Align hero copy with dealer header shell (.header-inner — blocks/header/header.css) */
+  --header-max-width: 1400px;
+  --header-logo-half-width: 110px;
+  --hero-copy-max-width: 560px;
+
   /* Boilerplate aliases (legacy styles.css selectors) */
   --nav-height: var(--header-height);
   --background-color: var(--color-background);
