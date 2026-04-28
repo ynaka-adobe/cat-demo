@@ -99,6 +99,21 @@
           }
         },
         {
+          "title": "Cards Category Card",
+          "id": "cards-category-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Cards Category Card",
+                  "model": "cards-category-card"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards Product",
           "id": "cards-product",
           "plugins": {
@@ -109,6 +124,21 @@
                   "name": "Cards Product",
                   "filter": "cards-product",
                   "model": "cards-product"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Product Card",
+          "id": "cards-product-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Cards Product Card",
+                  "model": "cards-product-card"
                 }
               }
             }

@@ -23,13 +23,13 @@
   {
     "id": "cards-category",
     "components": [
-      "card"
+      "cards-category-card"
     ]
   },
   {
     "id": "cards-product",
     "components": [
-      "card"
+      "cards-product-card"
     ]
   },
   {

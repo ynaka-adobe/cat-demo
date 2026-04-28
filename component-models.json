@@ -155,6 +155,25 @@
     ]
   },
   {
+    "id": "cards-category-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "cards-product",
     "fields": [
       {
@@ -164,6 +183,25 @@
         "label": "Name",
         "description": "Optional label for the content tree",
         "value": ""
+      }
+    ]
+  },
+  {
+    "id": "cards-product-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
