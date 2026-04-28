@@ -2,7 +2,7 @@
 
 /* Section-level spacing for the gray container */
 .section:has(.cards-product) {
-  padding: 48px 0 56px;
+  padding: 0 0 56px;
 }
 
 /* Diagonal accent background — runs across multiple sections */

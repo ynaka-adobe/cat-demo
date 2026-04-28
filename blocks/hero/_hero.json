@@ -45,7 +45,7 @@
           "component": "multiselect",
           "name": "classes",
           "label": "Hero appearance",
-          "description": "Use Large + Diagonal overlay together for the tall dealer hero with angled dark overlay (matches Hero large diagonal-overlay CSS).",
+          "description": "Diagonal overlay spans full viewport width with angled scrim. Optional: Large (600px band), Small, or Full viewport height with appearance.",
           "valueType": "string",
           "options": [
             {

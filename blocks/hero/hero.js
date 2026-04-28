@@ -122,8 +122,8 @@ function decorateForeground(fg) {
   const hero = fg.closest('.hero');
   if (!hero) return;
 
-  const isLargeDiagonal = hero.classList.contains('large')
-    && hero.classList.contains('diagonal-overlay');
+  const isDiagonalOverlay = hero.classList.contains('diagonal-overlay')
+    && !hero.classList.contains('stack');
 
   const { children } = fg;
   for (const [idx, child] of [...children].entries()) {
@@ -151,8 +151,8 @@ function decorateForeground(fg) {
     }
   }
 
-  /* Large diagonal: tag every cell with copy/CTA so flex stacks headline + button. */
-  if (isLargeDiagonal) {
+  /* Diagonal overlay: tag every cell with copy/CTA so flex stacks headline + button. */
+  if (isDiagonalOverlay) {
     [...fg.children].forEach((child) => {
       if (child.nodeName !== 'DIV') return;
       if (child.querySelector('h1, h2, h3, h4, h5, h6, p, a, ul, ol')) {
