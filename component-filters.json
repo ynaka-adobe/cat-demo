@@ -14,9 +14,14 @@
       "title",
       "hero",
       "cards",
+      "cards-category",
       "columns",
       "fragment"
     ]
+  },
+  {
+    "id": "cards-category",
+    "components": []
   },
   {
     "id": "cards",
